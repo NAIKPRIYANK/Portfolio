@@ -1,5 +1,5 @@
 import portfolioImage from "../assets/Projects/portfolio.png";
-import GarbageSystem from "../assets/Projects/garbagesystem.jpg";
+import GarbageSystem from "../assets/Projects/garbageSystem.jpg";
 
 const projectList = [
   {
