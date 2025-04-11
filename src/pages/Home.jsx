@@ -8,12 +8,14 @@ import LINKEDIN from '../assets/Home/linkedin.svg';
 import STACKOVER from '../assets/Home/stackoverflow.svg';
 
 const Home = () => {
-    const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 }); // Changed triggerOnce to false
+    const [ref, inView] = useInView({ 
+        triggerOnce: false, 
+        threshold: 0.1 
+    });
 
-    // Animation variants for different elements
     const headingVariants = {
         hidden: { opacity: 0, y: -30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
     };
 
     const textVariants = {
@@ -26,50 +28,33 @@ const Home = () => {
         visible: { 
             opacity: 1, 
             scale: 1, 
-            transition: { duration: 0.5, delay: 0.6, ease: "easeOut" } 
-        },
-    };
-
-    const buttonVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { 
-            opacity: 1, 
-            y: 0, 
-            transition: { duration: 0.7, delay: 0.9, ease: "easeOut" } 
-        },
-    };
-
-    const lottieVariants = {
-        hidden: { opacity: 0, scale: 0.9 },
-        visible: { 
-            opacity: 1, 
-            scale: 1, 
-            transition: { duration: 1, delay: 1.2, ease: "easeOut" } 
+            transition: { duration: 0.5, delay: 0.6 } 
         },
     };
 
     return (
-        <section id="home" className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-20 bg-white text-black">
+        <section ref={ref} className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 bg-gradient-to-br from-white via-purple-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
             {/* Left Section */}
-            <div ref={ref} className="flex-1">
-                {/* Heading */}
-                <motion.h1
+            <div className="flex-1 max-w-2xl">
+                <motion.div
                     variants={headingVariants}
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
-                    className="text-4xl md:text-6xl font-medium mb-6 mt-24"
+                    className="space-y-4"
                 >
-                    Hi, I’m Manish 👋
-                </motion.h1>
+                    <h2 className="text-2xl text-purple-600 dark:text-purple-400 font-medium">Welcome to my portfolio 👋</h2>
+                    <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 via-indigo-600 to-indigo-800 dark:from-purple-400 dark:via-indigo-400 dark:to-indigo-600 text-transparent bg-clip-text">
+                        I'm Manish Chavan
+                    </h1>
+                </motion.div>
 
-                {/* Paragraph */}
                 <motion.p
                     variants={textVariants}
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
-                    className="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed leading-6 text-justify"
+                    className="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed"
                 >
-                    A passionate Flutter and ReactJS developer focused on crafting pixel-perfect, high-performance mobile and web applications. From idea to execution, I bring modern UI/UX, clean code, and scalable architecture into every line I write. 🚀
+                    A passionate <span className="text-purple-600 dark:text-purple-400 font-semibold">Flutter</span> and <span className="text-indigo-600 dark:text-indigo-400 font-semibold">ReactJS</span> developer crafting pixel-perfect, high-performance mobile and web applications. Focused on clean code, modern UI/UX, and scalable solutions that make a difference. 🚀
                 </motion.p>
 
                 {/* Social Icons */}
@@ -77,46 +62,81 @@ const Home = () => {
                     variants={iconVariants}
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
-                    className="flex gap-6 mt-6"
+                    className="flex gap-6 mt-8"
                 >
-                    <a href="https://github.com/manish3203" target="_blank" rel="noopener noreferrer">
-                        <img src={GIT} alt="GitHub" className="w-10 h-10 hover:scale-110 transition" />
+                    <a 
+                        href="https://github.com/manish3203" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="group"
+                    >
+                        <img src={GIT} alt="GitHub" className="w-8 h-8 transition-transform group-hover:scale-110 group-hover:-rotate-12" />
                     </a>
-                    <a href="mailto:manishchavan639@gmail.com">
-                        <img src={EMAIL} alt="Email" className="w-10 h-10 hover:scale-110 transition" />
+                    <a 
+                        href="mailto:manishchavan639@gmail.com"
+                        className="group"
+                    >
+                        <img src={EMAIL} alt="Email" className="w-8 h-8 transition-transform group-hover:scale-110 group-hover:-rotate-12" />
                     </a>
-                    <a href="https://in.linkedin.com/in/manish-chavan-a16119235" target="_blank" rel="noopener noreferrer">
-                        <img src={LINKEDIN} alt="LinkedIn" className="w-10 h-10 hover:scale-110 transition" />
+                    <a 
+                        href="https://in.linkedin.com/in/manish-chavan-a16119235" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="group"
+                    >
+                        <img src={LINKEDIN} alt="LinkedIn" className="w-8 h-8 transition-transform group-hover:scale-110 group-hover:-rotate-12" />
                     </a>
-                    <a href="https://stackoverflow.com" target="_blank" rel="noopener noreferrer">
-                        <img src={STACKOVER} alt="Stack Overflow" className="w-10 h-10 hover:scale-110 transition" />
+                    <a 
+                        href="https://stackoverflow.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="group"
+                    >
+                        <img src={STACKOVER} alt="Stack Overflow" className="w-8 h-8 transition-transform group-hover:scale-110 group-hover:-rotate-12" />
                     </a>
                 </motion.div>
 
-                {/* Contact Button */}
+                {/* CTA Buttons */}
                 <motion.div
-                    variants={buttonVariants}
+                    variants={iconVariants}
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
-                    className="mt-8"
+                    className="mt-10 flex gap-4"
                 >
                     <a
                         href="#contact"
-                        className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 text-lg font-semibold rounded-xl shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:scale-105 hover:shadow-[0_15px_25px_rgba(0,0,0,0.4)] transform transition duration-300 ease-in-out"
+                        className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:-translate-y-0.5"
                     >
                         Contact Me
+                    </a>
+                    <a
+                        href="#project"
+                        className="px-6 py-3 text-purple-600 font-semibold border-2 border-purple-600 rounded-lg hover:bg-purple-50 transition-colors duration-300"
+                    >
+                        View Projects
                     </a>
                 </motion.div>
             </div>
 
             {/* Right Section with Lottie Animation */}
             <motion.div
-                variants={lottieVariants}
+                variants={{
+                    hidden: { opacity: 0, scale: 0.9 },
+                    visible: { 
+                        opacity: 1, 
+                        scale: 1,
+                        transition: { duration: 1, delay: 0.3 } 
+                    }
+                }}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
-                className="flex-1 mt-10 md:mt-0 md:ml-12"
+                className="flex-1 mt-12 md:mt-0 max-w-lg"
             >
-                <Lottie animationData={HomeGIF} loop={true} />
+                <Lottie 
+                    animationData={HomeGIF} 
+                    loop={true}
+                    className="w-full h-full drop-shadow-2xl"
+                />
             </motion.div>
         </section>
     );

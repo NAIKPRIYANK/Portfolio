@@ -4,10 +4,12 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       animation: {
         shake: 'shake 0.4s ease-in-out',
+        'spin-slow': 'spin 3s linear infinite',
       },
       keyframes: {
         shake: {
