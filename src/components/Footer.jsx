@@ -49,7 +49,7 @@ const Footer = () => {
             <h3 className="text-white font-bold text-lg mb-4">Connect</h3>
             <div className="flex gap-4">
               <a
-                href="https://github.com/manishopeninfo"
+                href="https://github.com/manish3203"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-purple-100 dark:text-purple-200 hover:text-white transition-colors"
@@ -81,7 +81,7 @@ const Footer = () => {
           
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-full hover:bg-white/20 transition-colors"
+            className=" flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-full hover:bg-white/20 transition-colors"
           >
             Back to Top <FaArrowUp />
           </button>
