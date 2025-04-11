@@ -2,132 +2,111 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const About = () => {
-  const fadeUp = {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
+  const skills = {
+    languages: ["Dart", "Java", "JavaScript", "TypeScript", "HTML", "CSS"],
+    frameworks: ["Flutter", "ReactJS", "Node.js", "Express.js", "Tailwind CSS"],
+    databases: ["MySQL", "PostgreSQL", "MongoDB", "Firebase"],
+    tools: ["Git", "VS Code", "Android Studio", "Postman", "Docker"]
   };
 
-  const skills = {
-    languages: ["Dart", "Java", "JavaScript"],
-    frameworks: ["Flutter", "ReactJS"],
-    databases: ["MySQL", "PostgreSQL"]
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
   };
 
   return (
     <section
       id="about"
-      className="justify-center flex flex-col md:px-20 bg-white text-black xl:justify-center"
+      className="py-20 px-6 md:px-20 bg-gradient-to-b from-purple-50 to-white dark:from-gray-800 dark:to-gray-900"
     >
-      <h1 className="text-4xl font-bold text-gray-800 mb-12 uppercase tracking-wide text-center">
-        About Me
-      </h1>
-
-      {/* Cards Section */}
-      <div className="flex flex-col md:flex-row gap-8 w-full mb-20">
-        <motion.div
-          {...fadeUp}
-          className="flex-1 bg-white bg-opacity-80 border border-gray-200 p-6 m-5 lg:m-0 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] transition-all duration-300 backdrop-blur-md"
+      <div className="max-w-6xl mx-auto">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold text-center mb-16"
         >
-          <h2 className="text-xl font-semibold text-purple-600 mb-3 flex items-center gap-2">
-            Who Am I? <span className="text-2xl">🤖</span>
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-          I’m <strong>Manish</strong> — a passionate developer who specializes in building smooth and scalable mobile applications using <strong>Flutter</strong>, and creating modern, responsive websites with <strong>ReactJS</strong>.
+          About <span className="text-purple-600 dark:text-purple-400">Me</span>
+        </motion.h1>
 
-          </p>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
+          >
+            <h2 className="text-2xl font-semibold text-purple-600 dark:text-purple-400 mb-4 flex items-center gap-3">
+              <span className="text-3xl">👨‍💻</span> Who Am I?
+            </h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              I'm <span className="font-semibold">Manish</span>, a dedicated developer with a passion for creating seamless digital experiences. I specialize in mobile app development with <span className="text-purple-600 dark:text-purple-400 font-medium">Flutter</span> and web development using <span className="text-indigo-600 dark:text-indigo-400 font-medium">React</span>. My journey in tech is driven by a constant desire to learn and create impactful solutions.
+            </p>
+          </motion.div>
 
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
+          >
+            <h2 className="text-2xl font-semibold text-purple-600 dark:text-purple-400 mb-4 flex items-center gap-3">
+              <span className="text-3xl">🎯</span> What I Do
+            </h2>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              I transform ideas into reality through clean, efficient code and intuitive user interfaces. My expertise spans from crafting responsive web applications to building native-like mobile experiences. I focus on writing maintainable code and implementing modern best practices in software development.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Skills Section */}
         <motion.div
-          {...fadeUp}
-          transition={{ ...fadeUp.transition, delay: 0.2 }}
-          className="flex-1 bg-white bg-opacity-80 border border-gray-200 p-6 m-5 lg:m-0 rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] transition-all duration-300 backdrop-blur-md"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-12"
         >
-          <h2 className="text-xl font-semibold text-purple-600 mb-3 flex items-center gap-2">
-            What I Do <span className="text-2xl">🧠</span>
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            From front-end magic to backend logic, I build clean UI/UX, manage data with powerful databases, and deploy production-ready apps with performance in mind.
-          </p>
+          <h2 className="text-3xl font-bold text-center mb-12 dark:text-gray-100">My Tech Stack</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {Object.entries(skills).map(([category, items], index) => (
+              <motion.div
+                key={category}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <h3 className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4 capitalize flex items-center gap-2">
+                  {category === "languages" && "🚀"}
+                  {category === "frameworks" && "⚛️"}
+                  {category === "databases" && "🗄️"}
+                  {category === "tools" && "🛠️"}
+                  {category}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {items.map((item) => (
+                    <span
+                      key={item}
+                      className="px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-sm font-medium hover:bg-purple-100 dark:hover:bg-purple-800/40 transition-colors"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
-
-      {/* Rich Tech Stack Section */}
-        <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.5 }}
-            className="w-full text-center px-4 md:px-0"
-            >
-            <h2 className="text-4xl font-bold text-gray-800 mb-14 tracking-wide">Tech Stack</h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                
-                {/* Languages */}
-                <motion.div
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white/90 backdrop-blur-md border border-gray-200 rounded-2xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_35px_rgba(0,0,0,0.15)] transition-all"
-                >
-                <h3 className="text-2xl font-semibold text-purple-600 mb-4 flex items-center justify-center gap-2">
-                    🧑‍💻 Languages
-                </h3>
-                <div className="flex flex-wrap justify-center gap-3">
-                    {skills.languages.map((item) => (
-                    <span
-                        key={item}
-                        className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-md hover:scale-105 transition"
-                    >
-                        {item}
-                    </span>
-                    ))}
-                </div>
-                </motion.div>
-
-                {/* Frameworks */}
-                <motion.div
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-                className="bg-white/90 backdrop-blur-md border border-gray-200 rounded-2xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_35px_rgba(0,0,0,0.15)] transition-all"
-                >
-                <h3 className="text-2xl font-semibold text-purple-600 mb-4 flex items-center justify-center gap-2">
-                    ⚙️ Frameworks
-                </h3>
-                <div className="flex flex-wrap justify-center gap-3">
-                    {skills.frameworks.map((item) => (
-                    <span
-                        key={item}
-                        className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-md hover:scale-105 transition"
-                    >
-                        {item}
-                    </span>
-                    ))}
-                </div>
-                </motion.div>
-
-                {/* Databases */}
-                <motion.div
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
-                className="bg-white/90 backdrop-blur-md border border-gray-200 rounded-2xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_10px_35px_rgba(0,0,0,0.15)] transition-all"
-                >
-                <h3 className="text-2xl font-semibold text-purple-600 mb-4 flex items-center justify-center gap-2">
-                    🗄️ Databases
-                </h3>
-                <div className="flex flex-wrap justify-center gap-3">
-                    {skills.databases.map((item) => (
-                    <span
-                        key={item}
-                        className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-md hover:scale-105 transition"
-                    >
-                        {item}
-                    </span>
-                    ))}
-                </div>
-                </motion.div>
-
-            </div>
-        </motion.div>
-
     </section>
   );
 };
