@@ -8,7 +8,7 @@ const projectList = [
     image: portfolioImage,
     description: "Modern, responsive portfolio website built with React, Tailwind CSS, and Framer Motion. Features smooth animations, dark mode, and interactive UI components.",
     codeLink: "https://github.com/manishopeninfo/Portfolio",
-    demoLink: "https://manishchavan.dev",
+    demoLink: "https://manishchavan.vercel.app",
     tech: ["React", "Tailwind CSS", "Framer Motion"]
   },
   {
@@ -16,15 +16,8 @@ const projectList = [
     image: GarbageSystem,
     description: "IoT-based smart waste management system utilizing sensors and real-time monitoring. Helps optimize collection routes and improve city cleanliness.",
     codeLink: "https://github.com/manishopeninfo/garbage-management",
-    tech: ["IoT", "React", "Node.js", "MongoDB"]
+    tech: ["IoT", "Flutter", "Firebase"]
   },
-  {
-    title: "Google Keep Clone",
-    image: portfolioImage,
-    description: "A feature-rich Google Keep clone with note organization, labels, and real-time syncing capabilities.",
-    codeLink: "https://github.com/manishopeninfo/google-keep-clone",
-    tech: ["React", "Firebase", "Material UI"]
-  }
 ];
 
 const Project = () => {

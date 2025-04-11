@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 const About = () => {
   const skills = {
-    languages: ["Dart", "Java", "JavaScript", "TypeScript", "HTML", "CSS"],
-    frameworks: ["Flutter", "ReactJS", "Node.js", "Express.js", "Tailwind CSS"],
-    databases: ["MySQL", "PostgreSQL", "MongoDB", "Firebase"],
+    languages: ["Dart", "Java", "JavaScript"],
+    frameworks: ["Flutter", "ReactJS","Tailwind CSS"],
+    databases: ["MySQL", "PostgreSQL", "Firebase"],
     tools: ["Git", "VS Code", "Android Studio", "Postman", "Docker"]
   };
 
@@ -83,7 +83,7 @@ const About = () => {
                 whileInView="visible"
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <h3 className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-4 capitalize flex items-center gap-2">
                   {category === "languages" && "🚀"}

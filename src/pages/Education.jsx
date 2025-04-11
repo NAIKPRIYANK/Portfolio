@@ -8,7 +8,7 @@ const Education = () => {
       duration: "2020 - 2024",
       status: "Completed",
       description: "Specialized in Computer Engineering with focus on software development and system design.",
-      grade: "8.5 CGPA"
+      grade: "8.31 CGPA"
     },
     {
       degree: "HSC Science",
@@ -16,7 +16,7 @@ const Education = () => {
       duration: "2018 - 2020",
       status: "Completed",
       description: "Completed Higher Secondary education with focus on Physics, Chemistry, and Mathematics.",
-      grade: "75%"
+      grade: "63.54%"
     },
     {
       degree: "SSC",
@@ -24,7 +24,7 @@ const Education = () => {
       duration: "2017 - 2018",
       status: "Completed",
       description: "Completed Secondary School education with distinction.",
-      grade: "85%"
+      grade: "74.80%"
     },
   ];
 

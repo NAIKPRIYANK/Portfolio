@@ -31,10 +31,10 @@ const ContactSection = () => {
       setSending(true);
       try {
         await emailjs.sendForm(
-          'YOUR_SERVICE_ID',
-          'YOUR_TEMPLATE_ID',
+          'service_3c7plx5',
+          'template_1d3k9on',
           formRef.current,
-          'YOUR_PUBLIC_KEY'
+          'b7bdKA4S_2SXmR2VM'
         );
         setSubmitted(true);
         setForm({ name: "", email: "", message: "" });
@@ -67,8 +67,8 @@ const ContactSection = () => {
     {
       icon: <FaGithub className="text-2xl" />,
       label: "GitHub",
-      value: "manishopeninfo",
-      link: "https://github.com/manishopeninfo"
+      value: "manish3203",
+      link: "https://github.com/manish3203"
     },
     {
       icon: <FaLinkedin className="text-2xl" />,
