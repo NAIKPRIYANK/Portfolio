@@ -14,10 +14,12 @@
 
 body {
   @apply bg-[rgb(var(--background))] text-[rgb(var(--text-primary))];
+  overflow-x: hidden !important;
 }
 
 html {
     scroll-behavior: smooth;
+   
 }
 
 @keyframes fadeIn {

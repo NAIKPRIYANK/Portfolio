@@ -79,7 +79,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-6 md:px-20 bg-gradient-to-b from-purple-50 to-white dark:from-gray-800 dark:to-gray-900 min-h-screen">
+    <section id="contact" className="py-20 px-6 md:px-20 bg-gradient-to-b from-purple-50 to-white dark:from-gray-800 dark:to-gray-900 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}

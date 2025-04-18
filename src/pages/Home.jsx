@@ -64,8 +64,9 @@ const Home = () => {
     return (
         // <div className='flex justify-center w-full'>
         <section
-            ref={ref}
-            className="relative min-h-screen flex flex-col md:flex-row items-center justify-center overflow-hidden"
+        ref={ref}
+        className="relative min-h-screen flex flex-col md:flex-row items-center justify-center overflow-hidden w-full max-w-full"
+      
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
         >
@@ -297,7 +298,7 @@ const Home = () => {
 
             
             <motion.div
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer justify-center"
+                className="absolute bottom-8 transform -translate-x-1/2 flex flex-col items-center cursor-pointer justify-center"
                 onClick={handleScroll} 
                 animate={{
                     y: [0, 10, 0],
