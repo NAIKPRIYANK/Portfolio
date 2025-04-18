@@ -21,20 +21,14 @@ const Header = () => {
   });
 
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
+    document.documentElement.classList.toggle("dark", isDark);
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 50);
-      
       const offset = 200;
       for (const link of navLinks) {
         const section = document.getElementById(link.id);
@@ -43,88 +37,90 @@ const Header = () => {
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-  };
+  const toggleTheme = () => setIsDark(!isDark);
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled 
-        ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg" 
-        : "bg-white dark:bg-gray-900"
+      isScrolled
+        ? "bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-md border-b border-gray-200 dark:border-gray-700"
+        : "bg-transparent"
     }`}>
-      <div className="max-w-7xl mx-auto px-6 h-[60px] flex items-center justify-between">
-        <a href="#home" className="text-xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">
-        DevPriyank
+      <div className="h-1 bg-gradient-to-r from-purple-600 to-indigo-600"></div>
+
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#home" className="flex items-center group gap-2">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-600 to-indigo-600 text-white font-bold flex items-center justify-center shadow-md group-hover:rotate-[8deg] transform transition">
+            P
+          </div>
+          <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 group-hover:from-purple-500 group-hover:to-indigo-500 transition-all">
+            DevPriyank
+          </span>
         </a>
 
-        <nav className="hidden md:flex items-center space-x-8">
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <a
-              key={link.name}
+              key={link.id}
               href={`#${link.id}`}
-              className={`relative px-2 py-1 transition-colors dark:text-gray-300 ${
-                activeSection === link.id 
-                ? "text-purple-600 dark:text-purple-400 font-semibold" 
-                : "hover:text-purple-600 dark:hover:text-purple-400"
+              className={`relative px-4 py-2 rounded-full transition-all duration-300 ${
+                activeSection === link.id
+                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md"
+                  : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
               }`}
             >
               {link.name}
               {activeSection === link.id && (
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-600 dark:bg-purple-400 rounded-full" />
+                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
               )}
             </a>
           ))}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 text-gray-600 dark:text-gray-300"
-            aria-label="Toggle theme"
+            className="ml-4 p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:shadow transition"
           >
             <div className="relative w-6 h-6">
-              <div className={`absolute inset-0 transform transition-transform duration-500 ${isDark ? 'rotate-0' : 'rotate-90 opacity-0'}`}>
-                <FiMoon size={24} />
+              <div className={`absolute inset-0 transition-all duration-500 ${isDark ? "opacity-100 rotate-0" : "opacity-0 rotate-90"}`}>
+                <FiMoon size={20} className="text-indigo-600" />
               </div>
-              <div className={`absolute inset-0 transform transition-transform duration-500 ${isDark ? '-rotate-90 opacity-0' : 'rotate-0'}`}>
-                <FiSun size={24} />
+              <div className={`absolute inset-0 transition-all duration-500 ${isDark ? "opacity-0 -rotate-90" : "opacity-100 rotate-0"}`}>
+                <FiSun size={20} className="text-purple-600" />
               </div>
             </div>
           </button>
         </nav>
 
-        <div className="md:hidden flex items-center space-x-4">
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 text-gray-600 dark:text-gray-300"
-            aria-label="Toggle theme"
-          >
-            {isDark ? <FiMoon size={20} /> : <FiSun size={20} />}
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-2">
+          <button onClick={toggleTheme} className="p-2 rounded-full bg-gray-100 dark:bg-gray-800">
+            {isDark ? <FiMoon size={18} /> : <FiSun size={18} />}
           </button>
-          <button 
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition text-gray-600 dark:text-gray-300"
+            className="p-2 rounded-md bg-gray-100 dark:bg-gray-800 transition"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[60px] left-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-lg py-4 space-y-2 md:hidden">
+        <div className="md:hidden px-4 py-3 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 space-y-2 animate-fadeIn">
           {navLinks.map((link) => (
             <a
-              key={link.name}
+              key={link.id}
               href={`#${link.id}`}
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`block px-6 py-2 ${
-                activeSection === link.id 
-                ? "text-purple-600 dark:text-purple-400 font-semibold bg-purple-50 dark:bg-purple-900/30" 
-                : "hover:bg-gray-50 dark:hover:bg-gray-800 dark:text-gray-300"
+              className={`block px-4 py-2 rounded-md text-center transition ${
+                activeSection === link.id
+                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow"
+                  : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
               }`}
             >
               {link.name}

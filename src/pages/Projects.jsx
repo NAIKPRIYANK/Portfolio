@@ -1,22 +1,30 @@
 import { motion } from "framer-motion";
-import portfolioImage from "../assets/Projects/portfolio.png";
-import GarbageSystem from "../assets/Projects/garbageSystem.jpg";
+import portfolioImage from "../assets/Projects/project1.png";
+import TempDev from "../assets/Projects/tempDev.png";
+import todo from "../assets/Projects/todo.png";
 
 const projectList = [
   {
     title: "Portfolio Website",
     image: portfolioImage,
     description: "Modern, responsive portfolio website built with React, Tailwind CSS, and Framer Motion. Features smooth animations, dark mode, and interactive UI components.",
-    codeLink: "https://github.com/manishopeninfo/Portfolio",
+    codeLink: "https://github.com/NAIKPRIYANK/Portfolio",
     demoLink: "https://manishchavan.vercel.app",
     tech: ["React", "Tailwind CSS", "Framer Motion"]
   },
   {
-    title: "Smart Garbage Management",
-    image: GarbageSystem,
+    title: "Temporal Dev",
+    image: TempDev,
     description: "IoT-based smart waste management system utilizing sensors and real-time monitoring. Helps optimize collection routes and improve city cleanliness.",
     codeLink: "https://github.com/manishopeninfo/garbage-management",
-    tech: ["IoT", "Flutter", "Firebase"]
+    tech: ["Python", "Tkinter", "Firebase"]
+  },
+  {
+    title: "To Do App",
+    image: todo,
+    description: "IoT-based smart waste management system utilizing sensors and real-time monitoring. Helps optimize collection routes and improve city cleanliness.",
+    codeLink: "https://github.com/NAIKPRIYANK/Flutter_Projects/tree/main/to_do_listV2",
+    tech: ["Dart", "Flutter", "SQLite"]
   },
 ];
 

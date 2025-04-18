@@ -30,7 +30,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="https://github.com/manish3203"
+                href="https://github.com/NAIKPRIYANK"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-purple-100 dark:text-purple-200 hover:text-white transition-colors p-2 bg-white/10 rounded-full"
@@ -39,7 +39,7 @@ const Footer = () => {
                 <FaGithub size={20} />
               </a>
               <a
-                href="https://linkedin.com/in/manish-chavan-a16119235"
+                href="https://www.linkedin.com/in/priyank-naik-99a695207/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-purple-100 dark:text-purple-200 hover:text-white transition-colors p-2 bg-white/10 rounded-full"
@@ -48,7 +48,7 @@ const Footer = () => {
                 <FaLinkedin size={20} />
               </a>
               <a
-                href="mailto:manishchavan639@gmail.com"
+                href="mailto:priyanknaik17@gmail.com"
                 className="text-purple-100 dark:text-purple-200 hover:text-white transition-colors p-2 bg-white/10 rounded-full"
                 aria-label="Email"
               >
