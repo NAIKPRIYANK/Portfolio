@@ -31,10 +31,10 @@ const ContactSection = () => {
       setSending(true);
       try {
         await emailjs.sendForm(
-          'service_3c7plx5',
-          'template_1d3k9on',
+          'service_iyqf5nf',
+          'template_n0jevnh',
           formRef.current,
-          'b7bdKA4S_2SXmR2VM'
+          'KmH3WVUMGpscvSq5_'
         );
         setSubmitted(true);
         setForm({ name: "", email: "", message: "" });
@@ -50,13 +50,13 @@ const ContactSection = () => {
     {
       icon: <FaEnvelope className="text-2xl" />,
       label: "Email",
-      value: "manishchavan639@gmail.com",
+      value: "priyanknaik17@gmail.com",
       link: "mailto:manishchavan639@gmail.com"
     },
     {
       icon: <FaPhone className="text-2xl" />,
       label: "Phone",
-      value: "+91 9763376596",
+      value: "+91 9172847440",
       link: "tel:+919763376596"
     },
     {
@@ -67,13 +67,13 @@ const ContactSection = () => {
     {
       icon: <FaGithub className="text-2xl" />,
       label: "GitHub",
-      value: "manish3203",
-      link: "https://github.com/manish3203"
+      value: "NAIKPRIYANK",
+      link: "https://github.com/NAIKPRIYANK"
     },
     {
       icon: <FaLinkedin className="text-2xl" />,
       label: "LinkedIn",
-      value: "Manish Chavan",
+      value: "Priyank Naik",
       link: "https://linkedin.com/in/manish-chavan-a16119235"
     }
   ];

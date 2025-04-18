@@ -60,7 +60,7 @@ const Header = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-6 h-[60px] flex items-center justify-between">
         <a href="#home" className="text-xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">
-          Manish.dev
+        DevPriyank
         </a>
 
         <nav className="hidden md:flex items-center space-x-8">
