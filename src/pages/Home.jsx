@@ -111,10 +111,11 @@ const Home = () => {
             )}
 
             {/* Content container */}
-            <div className="container  px-6 md:px-12 z-10 flex flex-col md:flex-row items-center justify-between gap-12 ">
+            <div className="container mt-[100px] md:mt-0 px-6 md:px-12 z-10 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left ">
 
                 {/* Left section */}
-                <div className="flex-1 max-w-2xl ml-28">
+                <div className="flex-1 max-w-2xl ml-0 md:ml-28 flex flex-col items-center md:items-start">
+
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -240,10 +241,8 @@ const Home = () => {
                 </div>
 
                 {/* Right section - 3D rotating cube effect */}
-                <div
-                    className="flex-1 max-w-md relative mr-24"
-                   
-                >
+                <div className="flex-1 max-w-md relative mr-0 md:mr-24 flex justify-center">
+
                     <div className="w-full h-80 md:h-96">
                         <motion.div
                            className="cube relative w-full h-full transform-style-preserve-3d"
@@ -279,7 +278,8 @@ const Home = () => {
                                     <img
                                         src={MyProfile}
                                         alt="Priyank Naik Profile"
-                                        className="w-96 h-96 rounded-full object-cover object-top border-4 border-white shadow-xl mb-6"
+                                        className="w-60 h-60 md:w-96 md:h-96 rounded-full object-cover object-top border-4 border-white shadow-xl mb-6"
+
                                     />
                                  
                                     {/* <p className="text-indigo-200 text-lg">App Developer & Backend Developer </p> */}
@@ -293,8 +293,11 @@ const Home = () => {
             </div>
 
             {/* Scroll indicator */}
+        
+
+            
             <motion.div
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer"
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer justify-center"
                 onClick={handleScroll} 
                 animate={{
                     y: [0, 10, 0],
@@ -310,6 +313,7 @@ const Home = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
             </motion.div>
+       
 
             {/* Custom CSS for 3D effects */}
             {/* <style jsx>{`
