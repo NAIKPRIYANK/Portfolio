@@ -8,17 +8,17 @@ const Education = () => {
 
   const educationData = [
     {
-      degree: "Bachelor Of Engineering",
+      degree: "Bachelor Of Engineering(IT)",
       institution: "Zeal College Of Engineering And Research | SPPU",
       duration: "2020 - 2024",
       status: "Completed",
       description:
-        "Specialized in Computer Engineering with focus on software development and system design.",
+        "Specialized in Computer Engineering with focus on software development.",
       grade: "8.92 CGPA",
       achievements: [
-        "Led team project on AI-based system optimization",
-        "Published research paper on database management",
-        "Participated in national coding competitions",
+        "Led team project on IOT system optimization",
+        "Published research paper on IOT based project",
+        "Developed app in flutter",
       ],
       icon: "⚙️",
     },
@@ -32,7 +32,7 @@ const Education = () => {
       grade: "63.54%",
       achievements: [
         "Science club president",
-        "Mathematics olympiad participant",
+        "Sport lover",
         "College quiz team member",
       ],
       icon: "🔬",
@@ -43,7 +43,7 @@ const Education = () => {
       duration: "2017 - 2018",
       status: "Completed",
       description: "Completed Secondary School education with distinction.",
-      grade: "74.80%",
+      grade: "88.20%",
       achievements: [
         "School topper in mathematics",
         "Active participant in literary activities",
@@ -199,20 +199,7 @@ const Education = () => {
           ))}
         </div>
 
-        {/* Footer Quote */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 2, duration: 1 }}
-          className="mt-28 text-center relative z-10"
-        >
-          <p className="text-2xl text-purple-800 italic mb-3">
-            "Education is not the learning of facts, but the training of the mind to think."
-          </p>
-          <p className="text-indigo-500 font-medium tracking-wide">
-            — Albert Einstein
-          </p>
-        </motion.div>
+      
       </div>
     </section>
   );
