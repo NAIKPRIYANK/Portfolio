@@ -9,20 +9,20 @@ const projectList = [
     image: portfolioImage,
     description: "Modern, responsive portfolio website built with React, Tailwind CSS, and Framer Motion. Features smooth animations, dark mode, and interactive UI components.",
     codeLink: "https://github.com/NAIKPRIYANK/Portfolio",
-    demoLink: "https://manishchavan.vercel.app",
+    demoLink: "https://naikpriyank.vercel.app/",
     tech: ["React", "Tailwind CSS", "Framer Motion"]
   },
   {
     title: "Temporal Dev",
     image: TempDev,
-    description: "IoT-based smart waste management system utilizing sensors and real-time monitoring. Helps optimize collection routes and improve city cleanliness.",
-    codeLink: "https://github.com/manishopeninfo/garbage-management",
+    description: "Built “Temporal Dev”, a Python project with Custom Tkinter, featuring file and exception handling for smooth debugging. Integrated AI-powered coding suggestions and real-time tech updates to enhance productivity.",
+    codeLink: "https://github.com/SuperX-ASLK/Temporal-DEV",
     tech: ["Python", "Tkinter", "Firebase"]
   },
   {
     title: "To Do App",
     image: todo,
-    description: "IoT-based smart waste management system utilizing sensors and real-time monitoring. Helps optimize collection routes and improve city cleanliness.",
+    description: "Developed a ToDo app using Flutter and Dart with SQLite for local data storage. Implemented task creation, update, deletion, and real-time UI updates for a smooth user experience.",
     codeLink: "https://github.com/NAIKPRIYANK/Flutter_Projects/tree/main/to_do_listV2",
     tech: ["Dart", "Flutter", "SQLite"]
   },

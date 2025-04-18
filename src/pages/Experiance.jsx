@@ -4,12 +4,12 @@ import { FaBriefcase, FaCode, FaCalendarAlt, FaTrophy, FaTools } from "react-ico
 const experienceData = [
     {
         company: "OIT Technology Pvt. Ltd.",
-        role: "Jr. Flutter Developer",
+        role: "Flutter Developer",
         duration: "May 2024 - Present",
         description: "Developing and maintaining cross-platform mobile applications using Flutter and Dart. Working with REST APIs and state management solutions.",
         achievements: [
             "Implemented clean architecture principles in mobile applications",
-            "Optimized app performance by 40%",
+            "Optimized app performance",
             "Developed reusable UI components"
         ],
         technologies: ["Flutter", "Dart", "REST APIs", "Firebase"]
